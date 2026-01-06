@@ -286,6 +286,52 @@ footer {
     padding: 1.5rem 0;
 }
 
+
+/* --- Gallery Section --- */
+.gallery {
+    padding: 5rem 0;
+    background-color: var(--background-light);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    height: 250px; /* Sabhi photos ki height ek jaisi rahegi */
+    background: #ddd;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Photo crop hokar box mein fit ho jayegi */
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Hover karne par zoom effect */
+}
+
+/* Mobile responsive adjustments for Gallery */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Mobile par 2 columns */
+        gap: 10px;
+    }
+    .gallery-item {
+        height: 180px;
+    }
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
     .about-content, .contact-grid {
